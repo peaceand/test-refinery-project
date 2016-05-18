@@ -1,28 +1,22 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Sample app for https://github.com/refinery/refinerycms/issues/3179#issuecomment-218943478
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Created by: 
+
+rvm use 2.1.5
+gem install refinerycms
+refinerycms test_project
+cd test_project
+[I edit config/boot.rb to allow local area network to see server]
+rails s -p 3000
+
+Then in browser go to localhost:3000/refinery and set up a new user as normal.
+
+Created a new page, and a child page
+
+Edit that child page, open firebug and watch console while clicking 'Save & continue' a couple of times. The URL it sends the POST request will change the second time to encode the final slash as %2F
+
+This breaks on Apache with default config due to http://httpd.apache.org/docs/current/mod/core.html#allowencodedslashes 
+
