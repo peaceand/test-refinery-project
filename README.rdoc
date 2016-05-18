@@ -5,12 +5,13 @@ Sample app for https://github.com/refinery/refinerycms/issues/3179#issuecomment-
 
 Created by: 
 
-rvm use 2.1.5
-gem install refinerycms
-refinerycms test_project
-cd test_project
-[I edit config/boot.rb to allow local area network to see server]
-rails s -p 3000
+* rvm use 2.1.5
+* gem install refinerycms
+* refinerycms test_project
+* cd test_project
+* (I edit config/boot.rb to allow local area network to see server)
+* rails s -p 3000
+
 
 Then in browser go to localhost:3000/refinery and set up a new user as normal.
 
